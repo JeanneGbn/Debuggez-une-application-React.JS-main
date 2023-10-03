@@ -20,17 +20,17 @@ const EventList = () => {
     }
     return false; 
   })
-
+  
   const paginatedEvents = filteredEvents.slice(
     (currentPage - 1) * PER_PAGE,
     currentPage * PER_PAGE
   );
-
+ 
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType);
   };
-  const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
+  const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE);
   const typeList = new Set(data?.events.map((event) => event.type));
   return (
     <>
